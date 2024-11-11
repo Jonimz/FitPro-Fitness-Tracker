@@ -5,9 +5,9 @@
 ❗️Exclamation Marks ❗️indicate action items; you should remove these emoji as you complete/update the items which 
   they accompany. (This means that your final README should have no ❗️in it!)
 
-❗️**Author(s)**: Your name(s) here
+️**Author(s)**: Joyce Nimely
 
-❗️**Google Doc Link**: Your link here
+**Google Doc Link**: https://docs.google.com/document/d/1vszq40CxjkSzXqsc3uW9YvX3vCV9gUY0ZHuy3VglqKU/edit?usp=sharing
 
 ---
 
@@ -20,9 +20,10 @@ helped you, AI tools you've used, and any other resources that are not solely yo
 
 ## Milestone 1: Setup, Planning, Design
 
-❗️**Title**: `What is the title of your project? Be creative! Replace this block of text.`
+️**Title**: `FitPro Your Ultimate Workout and Goal Tracker.`
 
-❗**Purpose**: `In a single sentence, describe WHAT your project will do. Replace this block of text.`
+**Purpose**: `Fitpro is a python application design to help user track log workout
+ track progress and set fitness goal`
 
 ❗️**Source Assignment(s)**: `List which original assignments you will base your project on? Replace this block of text.`
 
