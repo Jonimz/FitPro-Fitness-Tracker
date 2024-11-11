@@ -25,7 +25,8 @@ helped you, AI tools you've used, and any other resources that are not solely yo
 **Purpose**: `Fitpro is a python application design to help user track log workout
  track progress and set fitness goal`
 
-❗️**Source Assignment(s)**: `List which original assignments you will base your project on? Replace this block of text.`
+**Source Assignment(s)**: `My project would be based on T02, exploring turtles for graphic representaion
+HW07 and T08.`
 
 ❗️**CRC Card(s)**:
   - Create a CRC card for each class that your project will implement.
