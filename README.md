@@ -28,7 +28,7 @@ helped you, AI tools you've used, and any other resources that are not solely yo
 **Source Assignment(s)**: `My project would be based on T02, exploring turtles for graphic representaion
 HW07 and T08.`
 
-❗️**CRC Card(s)**:
+**CRC Card(s)**:
   - Create a CRC card for each class that your project will implement.
   - See this link for a sample CRC card and a template to use for your own cards (you will have to make a copy to edit):
     [CRC Card Example](https://docs.google.com/document/d/1JE_3Qmytk_JGztRqkPXWACJwciPH61VCx3idIlBCVFY/edit?usp=sharing)
