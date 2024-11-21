@@ -38,15 +38,15 @@ HW07 and T08. `
   
 ![Don't leave me in your README!](image/crc.png "Image of CRC card as an example. Upload your CRC card(s) in place of this one. ")
 
-❗️**Branches**: This project will **require** effective use of git. 
+️**Branches**: This project will **require** effective use of git. 
 
 Each partner should create a branch at the beginning of the project, and stay on this branch (or branches of their 
 branch) as they work. When you need to bring each others branches together, do so by merging each other's branches 
 into your own, following the process we've discussed in previous assignments: 
 
 ```
-    Branch 1 name: _____________
-    Branch 2 name: _____________
+    Branch 1 name: I'm working alone so it's just one branch "nimely_J"
+    
 ```
 ---
 
@@ -58,7 +58,8 @@ Reflect on what you’ve done so far. How’s it going? Are you feeling behind/a
 What has surprised you so far? Describe your general feelings. Be honest with yourself; this section is for you, not me.
 
 ```
-    *
+    I feel a little worried as I just now understood how GUI works. Generaly, I feel anxious, there are some parts of this assignment that 
+    I don't fully understand yet. Also, I feel a little behind, I feel like I'm the only one who doesn't understand some parts of what I'm doing. 
 ```
 
 ---

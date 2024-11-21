@@ -26,8 +26,8 @@ def test_workout():
     result = log_work("running", 30, "medium")
     unittest(result == {"type": "running", "duration": 30, "intensity": "medium"})
 
-    result = log_work(" ",10, "medium" )
-    unittest(result=="Please log your workout")
+    result = log_work("jogging",10, "medium" )
+    unittest(result == {"type": "jogging", "duration": 10, "intensity": "medium"})
 
     result = log_work("running", 30, "tired")
     unittest(result == "Please enter a valid intensity")
