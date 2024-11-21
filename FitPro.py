@@ -18,7 +18,6 @@
 ####################################################################################
 
 import tkinter as tk
-from tkinter import messagebox
 
 
 def log_work(workout_type, duration, intensity):
@@ -28,14 +27,13 @@ def log_work(workout_type, duration, intensity):
        workout_type (str): The type of workout (stairmaster, running, cycling).
        duration (int): The duration of the workout in minutes.
       intensity (str):  The  intensity level ( low, medium, high).
-
     Return: The logged workout details
         """
 
     if not workout_type:
         return "Please enter a workout:"
-    if duration >=0:
-        return "Please enter a postive number:"
+    if duration <=0:
+        return "Please enter a positive number:"
     valid_intensities={"high", "low", "medium"}
     if intensity not in valid_intensities:
         return "Please enter a valid intensity"
