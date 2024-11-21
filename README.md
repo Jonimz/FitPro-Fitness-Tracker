@@ -26,7 +26,7 @@ helped you, AI tools you've used, and any other resources that are not solely yo
  track progress and set fitness goal`
 
 **Source Assignment(s)**: `My project would be based on T02, exploring turtles for graphic representaion
-HW07 and T08.`
+HW07 and T08. `
 
 **CRC Card(s)**:
   - Create a CRC card for each class that your project will implement.
@@ -58,7 +58,7 @@ Reflect on what you’ve done so far. How’s it going? Are you feeling behind/a
 What has surprised you so far? Describe your general feelings. Be honest with yourself; this section is for you, not me.
 
 ```
-    **Replace this text with your reflection
+    *
 ```
 
 ---
