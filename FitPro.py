@@ -15,10 +15,10 @@
 # This program is a simple exploration.
 #######################################################################
 # Acknowledgements:
-
-
-
 ####################################################################################
+
+import tkinter as tk
+from tkinter import messagebox
 
 
 def log_work(workout_type, duration, intensity):
@@ -33,12 +33,24 @@ def log_work(workout_type, duration, intensity):
         """
 
     if not workout_type:
-        print("Please enter a workout")
+        return "Please enter a workout:"
     if duration >=0:
-        print("Please enter a postive number")
-
-    if  intensity not in{"high, low, medium, moderate"}:
-        print("Renter Intensity")
+        return "Please enter a postive number:"
+    valid_intensities={"high", "low", "medium"}
+    if intensity not in valid_intensities:
+        return "Please enter a valid intensity"
     return{"type": workout_type, "duration" : duration, "intensity" : intensity}
 
+root= tk.Tk()
+root.title("FitPro App")
+root.geometry("300x300")
+textbox = tk.Text(root, height= 4, font=("Arial"))
+textbox.pack(padx=10)
+
+#creating the widgets
+label = tk.Label(root, text= "welcome", font=("Arial", 16 ))
+label.pack(padx = 10, pady = 10)
+
+
+root.mainloop()
 
