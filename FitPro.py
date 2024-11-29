@@ -18,26 +18,60 @@
 ####################################################################################
 
 import tkinter as tk
+import turtle
 
+class User:
+    """A class for the user information for Fitpro
+    """
+    def __init__(self, name, age, height, workout):
+        self.name= name
+        self.age= age
+        self.height= height
+        self.workout = []
 
-def log_work(workout_type, duration, intensity):
-    """"
-    This functions allows the user to log their workouts
-    Args:
-       workout_type (str): The type of workout (stairmaster, running, cycling).
-       duration (int): The duration of the workout in minutes.
-      intensity (str):  The  intensity level ( low, medium, high).
-    Return: The logged workout details
+    def log_workout(self, workout):
         """
+        A function for the user's workouts
 
-    if not workout_type:
-        return "Please enter a workout:"
-    if duration <=0:
-        return "Please enter a positive number:"
-    valid_intensities={"high", "low", "medium"}
-    if intensity not in valid_intensities:
-        return "Please enter a valid intensity"
-    return{"type": workout_type, "duration" : duration, "intensity" : intensity}
+        :arg: a workout object to be added to the list
+        """
+        self.workouts.append(workout)
+
+    def __str__(self):
+        """"
+        :returns: string representing the user age, name, height
+        """
+        return f"User(name={self.name}, age= {self.age}, height= {self.height})"
+
+class Workout:
+    """
+    class for the workout session
+    """
+    def __init__(self, workout_type, duration, calories):
+        """initializes a workout instance with workout_type, duration, calories
+        """
+        self.workout_type = workout_type
+        self.duration = duration
+        self.calories= calories
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 root= tk.Tk()
 root.title("FitPro App")
