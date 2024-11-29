@@ -20,7 +20,6 @@
 import tkinter as tk
 import turtle
 
-from pygame.examples.scrap_clipboard import screen
 
 
 class User:
@@ -60,16 +59,55 @@ class Workout:
 class FitPro:
     def __init__(self,  root):
         self.root= tk.Tk
-        self.root.title("FitPro workout Tracker")
+        self.root.title("FitPro Workout Tracker")
 
         #the user data
         self.workout = []
         self.duration = 0
         self.calories = 0
 
-        self.create_widgets()
+        self.create_user_frame()
+        self.create_workout_frame()
 
-    def create_widgets(self):
+    def create_user_frame(self):
+        """"
+        creates the user information frame """
+
+        user_frame = tk.Frame(self.root)
+        user_frame.pack(pady = 10)
+
+        tk.Label(user_frame, text = "Name:").grid(row =0, column = 2, padx= 5, pady= 5)
+        self.name_entry = tk.Entry(user_frame)
+        self.name_entry.grid(row= 0, column = 2, padx=5, pady= 5)
+
+        tk.Label(user_frame, text="age:").grid(row=0, column=2, padx=5, pady=5)
+        self.name_entry = tk.Entry(user_frame)
+        self.name_entry.grid(row=0, column=2, padx=5, pady=5)
+
+        tk.Label(user_frame, text="height:").grid(row=0, column=2, padx=5, pady=5)
+        self.name_entry = tk.Entry(user_frame)
+        self.name_entry.grid(row=0, column=2, padx=5, pady=5)
+
+    def create_workout_fame(self):
+        """
+        creates the workout logging and progress fame
+        :return:
+        """
+        workout_fame = tk.Frame()
+        workout_fame.pack(pady=10)
+
+        tk.Label(workout_fame, text = "Workout Type:").grid(row = 5, column = 2, padx= 5, pady = 5 )
+        self.name_entry = tk.Entry(workout_fame)
+        self.name_entry.grid(row=0, column=2, padx=5, pady=5)
+
+        tk.Label(workout_fame, text="Duration:").grid(row=0, column=2, padx=5, pady=5)
+        self.name_entry = tk.Entry(workout_fame)
+        self.name_entry.grid(row=0, column=2, padx=5, pady=5)
+
+        tk.Label(workout_fame, text="Calories Burned:").grid(row=0, column=2, padx=5, pady=5)
+        self.name_entry= tk.Entry(workout_fame)
+        self.name_entry.grid(row=0, column=2, padx=5, pady=5)
+
 
 
 
@@ -78,4 +116,11 @@ class FitPro:
 
 
 screen.mainloop()
+
+
+
+
+
+
+
 
