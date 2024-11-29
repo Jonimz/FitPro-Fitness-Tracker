@@ -20,6 +20,9 @@
 import tkinter as tk
 import turtle
 
+from pygame.examples.scrap_clipboard import screen
+
+
 class User:
     """A class for the user information for Fitpro
     """
@@ -54,35 +57,11 @@ class Workout:
         self.duration = duration
         self.calories= calories
 
+class FitPro:
+    def __init__(self, root):
+        self.root= tk.Tk
+        self.root.title("FitPro workout Tracker")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-root= tk.Tk()
-root.title("FitPro App")
-root.geometry("300x300")
-textbox = tk.Text(root, height= 4, font=("Arial"))
-textbox.pack(padx=10)
-
-#creating the widgets
-label = tk.Label(root, text= "welcome", font=("Arial", 16 ))
-label.pack(padx = 10, pady = 10)
-
-
-root.mainloop()
+screen.mainloop()
 
