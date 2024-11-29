@@ -58,9 +58,23 @@ class Workout:
         self.calories= calories
 
 class FitPro:
-    def __init__(self, root):
+    def __init__(self,  root):
         self.root= tk.Tk
         self.root.title("FitPro workout Tracker")
+
+        #the user data
+        self.workout = []
+        self.duration = 0
+        self.calories = 0
+
+        self.create_widgets()
+
+    def create_widgets(self):
+
+
+
+
+
 
 
 screen.mainloop()
