@@ -73,40 +73,43 @@ class FitPro:
         """"
         creates the user information frame """
 
+
+
         user_frame = tk.Frame(self.root)
         user_frame.pack(pady = 10)
 
         tk.Label(user_frame, text = "Name:").grid(row =0, column = 2, padx= 5, pady= 5)
         self.name_entry = tk.Entry(user_frame)
-        self.name_entry.grid(row= 0, column = 2, padx=5, pady= 5)
+        self.name_entry.grid(row= 0, column = 1, padx=5, pady= 5)
 
-        tk.Label(user_frame, text="age:").grid(row=0, column=2, padx=5, pady=5)
-        self.name_entry = tk.Entry(user_frame)
-        self.name_entry.grid(row=0, column=2, padx=5, pady=5)
+        tk.Label(user_frame, text="Age:").grid(row=0, column=2, padx=5, pady=5)
+        self.age_entry = tk.Entry(user_frame)
+        self.age_entry.grid(row=1, column=1, padx=5, pady=5)
 
-        tk.Label(user_frame, text="height:").grid(row=0, column=2, padx=5, pady=5)
-        self.name_entry = tk.Entry(user_frame)
-        self.name_entry.grid(row=0, column=2, padx=5, pady=5)
+        tk.Label(user_frame, text="Height:").grid(row=0, column=2, padx=5, pady=5)
+        self.height_entry = tk.Entry(user_frame)
+        self.height_entry.grid(row=2, column=1, padx=5, pady=5)
 
     def create_workout_fame(self):
         """
         creates the workout logging and progress fame
+
         :return:
         """
         workout_fame = tk.Frame()
         workout_fame.pack(pady=10)
 
         tk.Label(workout_fame, text = "Workout Type:").grid(row = 5, column = 2, padx= 5, pady = 5 )
-        self.name_entry = tk.Entry(workout_fame)
-        self.name_entry.grid(row=0, column=2, padx=5, pady=5)
+        self.type = tk.Entry(workout_fame)
+        self.type.grid(row=0, column=1, padx=5, pady=5)
 
-        tk.Label(workout_fame, text="Duration:").grid(row=0, column=2, padx=5, pady=5)
-        self.name_entry = tk.Entry(workout_fame)
-        self.name_entry.grid(row=0, column=2, padx=5, pady=5)
+        tk.Label(workout_fame, text="Duration(mins):").grid(row=0, column=2, padx=5, pady=5)
+        self.duration_entry = tk.Entry(workout_fame)
+        self.duration_entry.grid(row=1, column=1, padx=5, pady=5)
 
         tk.Label(workout_fame, text="Calories Burned:").grid(row=0, column=2, padx=5, pady=5)
-        self.name_entry= tk.Entry(workout_fame)
-        self.name_entry.grid(row=0, column=2, padx=5, pady=5)
+        self.calories_entry= tk.Entry(workout_fame)
+        self.calories_entry.grid(row=2, column=1, padx=5, pady=5)
 
 
 
@@ -115,7 +118,18 @@ class FitPro:
 
 
 
-screen.mainloop()
+
+
+
+
+
+
+
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = FitPro(root)
+    root.mainloop()
 
 
 
