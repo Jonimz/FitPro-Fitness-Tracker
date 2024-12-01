@@ -18,9 +18,8 @@
 ####################################################################################
 
 import tkinter as tk
+from tkinter import  messagebox
 import turtle
-
-
 
 class User:
     """A class for the user information for Fitpro
@@ -61,10 +60,7 @@ class FitPro:
         self.root= tk.Tk
         self.root.title("FitPro Workout Tracker")
 
-        #the user data
-        self.workout = []
-        self.duration = 0
-        self.calories = 0
+        self.user=None
 
         self.create_user_frame()
         self.create_workout_frame()
@@ -73,43 +69,68 @@ class FitPro:
         """"
         creates the user information frame """
 
-
-
         user_frame = tk.Frame(self.root)
         user_frame.pack(pady = 10)
 
-        tk.Label(user_frame, text = "Name:").grid(row =0, column = 2, padx= 5, pady= 5)
+        tk.Label(user_frame, text = "Name:").grid(row =0, column = 0, padx= 5, pady= 5)
         self.name_entry = tk.Entry(user_frame)
         self.name_entry.grid(row= 0, column = 1, padx=5, pady= 5)
 
-        tk.Label(user_frame, text="Age:").grid(row=0, column=2, padx=5, pady=5)
+        tk.Label(user_frame, text="Age:").grid(row=1, column=0, padx=5, pady=5)
         self.age_entry = tk.Entry(user_frame)
         self.age_entry.grid(row=1, column=1, padx=5, pady=5)
 
-        tk.Label(user_frame, text="Height:").grid(row=0, column=2, padx=5, pady=5)
+        tk.Label(user_frame, text="Height (cm):").grid(row=2, column=0, padx=5, pady=5)
         self.height_entry = tk.Entry(user_frame)
         self.height_entry.grid(row=2, column=1, padx=5, pady=5)
+
+        tk.Button(user_frame, text = "Save User", command=self.save_user_frame).grid(row= 3, columnspan= 2, pady=10)
+
+    def save_user(self):
+        """"
+        This function saves  the user information """
+
+        name = self.name_entry.get().strip()
+        age = int(self.age_entry.get())
+        height = float(self.height_entry.get())
+
+
+
+
+
+
+
 
     def create_workout_fame(self):
         """
         creates the workout logging and progress fame
-
-        :return:
         """
         workout_fame = tk.Frame()
         workout_fame.pack(pady=10)
 
-        tk.Label(workout_fame, text = "Workout Type:").grid(row = 5, column = 2, padx= 5, pady = 5 )
+        tk.Label(workout_fame, text = "Workout Type:").grid(row = 0, column = 0, padx= 5, pady = 5 )
         self.type = tk.Entry(workout_fame)
         self.type.grid(row=0, column=1, padx=5, pady=5)
 
-        tk.Label(workout_fame, text="Duration(mins):").grid(row=0, column=2, padx=5, pady=5)
+        tk.Label(workout_fame, text="Duration(mins):").grid(row=1, column=0, padx=5, pady=5)
         self.duration_entry = tk.Entry(workout_fame)
         self.duration_entry.grid(row=1, column=1, padx=5, pady=5)
 
-        tk.Label(workout_fame, text="Calories Burned:").grid(row=0, column=2, padx=5, pady=5)
+        tk.Label(workout_fame, text="Calories Burned:").grid(row=2, column=0, padx=5, pady=5)
         self.calories_entry= tk.Entry(workout_fame)
         self.calories_entry.grid(row=2, column=1, padx=5, pady=5)
+
+        tk.Button(workout_fame, text="Log Workout", command=self.log_workout).grid(row=3, columnspan=2, pady=10)
+
+        tk.Button(self.root, text= "View Progress", command=self.view_progress).pack(pady=5)
+
+
+    def log_workout(self):
+        """"
+        Log the workout for the user
+        """
+
+
 
 
 
