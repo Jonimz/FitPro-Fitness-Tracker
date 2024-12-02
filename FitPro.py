@@ -22,13 +22,13 @@ from tkinter import  messagebox
 import turtle
 
 class User:
-    """A class for the user information for Fitpro
+    """A class for the user information for Fitpro.
     """
-    def __init__(self, name, age, height, workout):
+    def __init__(self, name, age, height):
         self.name= name
         self.age= age
         self.height= height
-        self.workout = []
+        self.workouts = []
 
     def log_workout(self, workout):
         """
@@ -46,7 +46,7 @@ class User:
 
 class Workout:
     """
-    class for the workout session
+    A class for the workout session
     """
     def __init__(self, workout_type, duration, calories):
         """initializes a workout instance with workout_type, duration, calories
@@ -56,8 +56,10 @@ class Workout:
         self.calories= calories
 
 class FitPro:
-    def __init__(self,  root):
-        self.root= tk.Tk
+    """" A class for the FitPro application
+     """
+    def __init__(self, root):
+        self.root= root
         self.root.title("FitPro Workout Tracker")
 
         self.user=None
@@ -84,35 +86,37 @@ class FitPro:
         self.height_entry = tk.Entry(user_frame)
         self.height_entry.grid(row=2, column=1, padx=5, pady=5)
 
-        tk.Button(user_frame, text = "Save User", command=self.save_user_frame).grid(row= 3, columnspan= 2, pady=10)
+        tk.Button(user_frame, text = "Save User", command=self.save_user).grid(row= 3, columnspan= 2, pady=10)
 
     def save_user(self):
         """"
-        This function saves  the user information """
+        This function saves the user information """
 
-        name = self.name_entry.get().strip()
-        age = int(self.age_entry.get())
-        height = float(self.height_entry.get())
+        try:
+            name = self.name_entry.get().strip()
+            age = int(self.age_entry.get())
+            height = float(self.height_entry.get())
 
+            if not name:
+                raise ValueError("Please add a name.")
 
-
-
-
-
-
+            self.user = User(name, age, height)
+            messagebox.showinfo("User name saved")
+        except ValueError:
+            messagebox.showerror("Invalid input")
 
     def create_workout_fame(self):
         """
         creates the workout logging and progress fame
         """
-        workout_fame = tk.Frame()
+        workout_fame = tk.Frame(self.root)
         workout_fame.pack(pady=10)
 
         tk.Label(workout_fame, text = "Workout Type:").grid(row = 0, column = 0, padx= 5, pady = 5 )
-        self.type = tk.Entry(workout_fame)
-        self.type.grid(row=0, column=1, padx=5, pady=5)
+        self.workout_type_entry = tk.Entry(workout_fame)
+        self.workout_type_entry.grid(row=0, column=1, padx=5, pady=5)
 
-        tk.Label(workout_fame, text="Duration(mins):").grid(row=1, column=0, padx=5, pady=5)
+        tk.Label(workout_fame, text="Duration (mins):").grid(row=1, column=0, padx=5, pady=5)
         self.duration_entry = tk.Entry(workout_fame)
         self.duration_entry.grid(row=1, column=1, padx=5, pady=5)
 
@@ -124,25 +128,42 @@ class FitPro:
 
         tk.Button(self.root, text= "View Progress", command=self.view_progress).pack(pady=5)
 
-
     def log_workout(self):
         """"
         Log the workout for the user
         """
+        if not self.user:
+            messagebox.showwarning("Please save user information first")
+            return
+
+        try:
+            workout_type = self.workout_type_entry.get().strip()
+            duration = int(self.duration_entry.get())
+            calories = int(self.calories_entry.get())
+            if not workout_type:
+                raise ValueError("Please enter the workout type")
+            if duration <= 0 or calories <= 0:
+                raise ValueError ("Enter a positive number")
+
+            workout = Workout(workout_type, duration, calories)
+            self.user.log_workout(workout)
+
+            #this will clear inputs
+
+            self.workout_type_entry.delete(0, tk.END)
+            self.duration_entry.delete(0, tk.END)
+            self.calories_entry.delete(0, tk.END)
+            messagebox.showinfo("workout logged successfully")
 
 
 
+    def view_progress(self):
+        """This function displays the user's workout progress"""
+        if not self.user:
+            messagebox. showwarning("Please enter the user information first")
+        return
 
-
-
-
-
-
-
-
-
-
-
+        total_workouts = len(self.user.workouts)
 
 
 
