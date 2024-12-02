@@ -16,6 +16,12 @@ Throughout this project, you have likely used outside resources. Reference all i
 and describe how you integrated the ideas or code into your program. This includes online sources, people who have 
 helped you, AI tools you've used, and any other resources that are not solely your own contribution. Update as you go.
 
+
+
+Refernces: Cemah Turboh for helping me with this project
+         Textbooks Used : How to Think like a Computer Scientist: Interactive Edition
+         
+
 ---
 
 ## Milestone 1: Setup, Planning, Design

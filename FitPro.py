@@ -98,34 +98,38 @@ class FitPro:
             height = float(self.height_entry.get())
 
             if not name:
-                raise ValueError("Please add a name.")
+                raise ValueError("Invalid Input ", "Please add a name.")
 
             self.user = User(name, age, height)
             messagebox.showinfo("User name saved")
         except ValueError:
             messagebox.showerror("Invalid input")
 
-    def create_workout_fame(self):
+        #this clears the input fields
+        self.name_entry.delete(0, tk.END)
+        self.age_entry.delete(0, tk.END)
+        self.height_entry.delete(0, tk.END)
+
+    def create_workout_frame(self):
         """
         creates the workout logging and progress fame
         """
-        workout_fame = tk.Frame(self.root)
-        workout_fame.pack(pady=10)
+        workout_frame = tk.Frame(self.root)
+        workout_frame.pack(pady=10)
 
-        tk.Label(workout_fame, text = "Workout Type:").grid(row = 0, column = 0, padx= 5, pady = 5 )
-        self.workout_type_entry = tk.Entry(workout_fame)
+        tk.Label(workout_frame, text = "Workout Type:").grid(row = 0, column = 0, padx= 5, pady = 5 )
+        self.workout_type_entry = tk.Entry(workout_frame)
         self.workout_type_entry.grid(row=0, column=1, padx=5, pady=5)
 
-        tk.Label(workout_fame, text="Duration (mins):").grid(row=1, column=0, padx=5, pady=5)
-        self.duration_entry = tk.Entry(workout_fame)
+        tk.Label(workout_frame, text="Duration (minutes):").grid(row=1, column=0, padx=5, pady=5)
+        self.duration_entry = tk.Entry(workout_frame)
         self.duration_entry.grid(row=1, column=1, padx=5, pady=5)
 
-        tk.Label(workout_fame, text="Calories Burned:").grid(row=2, column=0, padx=5, pady=5)
-        self.calories_entry= tk.Entry(workout_fame)
+        tk.Label(workout_frame, text="Calories Burned:").grid(row=2, column=0, padx=5, pady=5)
+        self.calories_entry= tk.Entry(workout_frame)
         self.calories_entry.grid(row=2, column=1, padx=5, pady=5)
 
-        tk.Button(workout_fame, text="Log Workout", command=self.log_workout).grid(row=3, columnspan=2, pady=10)
-
+        tk.Button(workout_frame, text="Log Workout", command=self.log_workout).grid(row=3, columnspan=2, pady=10)
         tk.Button(self.root, text= "View Progress", command=self.view_progress).pack(pady=5)
 
     def log_workout(self):
@@ -133,39 +137,49 @@ class FitPro:
         Log the workout for the user
         """
         if not self.user:
-            messagebox.showwarning("Please save user information first")
+            messagebox.showwarning("User info not entered","Please save user information first")
             return
 
         try:
             workout_type = self.workout_type_entry.get().strip()
             duration = int(self.duration_entry.get())
             calories = int(self.calories_entry.get())
+
             if not workout_type:
                 raise ValueError("Please enter the workout type")
             if duration <= 0 or calories <= 0:
                 raise ValueError ("Enter a positive number")
 
+            #Create and log the workouts
             workout = Workout(workout_type, duration, calories)
             self.user.log_workout(workout)
 
-            #this will clear inputs
-
+            #this clears input fields
             self.workout_type_entry.delete(0, tk.END)
             self.duration_entry.delete(0, tk.END)
             self.calories_entry.delete(0, tk.END)
-            messagebox.showinfo("workout logged successfully")
 
+            messagebox.showinfo("workout logged successfully")
+        except ValueError as e:
+            messagebox.showerror("Error", "Invalid input")
 
 
     def view_progress(self):
         """This function displays the user's workout progress"""
         if not self.user:
-            messagebox. showwarning("Please enter the user information first")
-        return
+            messagebox. showwarning("Missing User Info", "Please enter the user information first")
+            return
 
         total_workouts = len(self.user.workouts)
+        total_duration = sum(w.duration for w in self.user.workouts)
+        total_calories = sum (w.calories for w in self.user.workouts)
 
+        progress_message = (
+        f"Total Workouts: {total_workouts}\n"
+        f"Total Duration: {total_duration} minutes\n"
+        f"Total Calories Burned:{total_calories} kcal")
 
+        messagebox.showinfo("Workout Progress", progress_message)
 
 
 if __name__ == "__main__":
