@@ -74,14 +74,15 @@ What has surprised you so far? Describe your general feelings. Be honest with yo
 
 Indicate what percentage of the project you have left to complete and how confident you feel. 
 
-❗️**Completion Percentage**: `0 - 100%`
+❗️**Completion Percentage**: `70- 100%`
 
 ❗️**Confidence**: Describe how confident you feel about completing this project, and why. Then, describe some 
   strategies you can employ to increase the likelihood that you'll be successful in completing this project 
   before the deadline.
 
 ```
-    **Replace this text with your reflection
+    ** I feel moderately confident about completing the project. Most of the  functionality, such as the User and Workout classes and the ability to save and log user details, has been implemented
+    I'm trying to make the app look better by adjusting the colors, fonts, and padding to make it more visually appealing. I'm also working on using the turtle library to create a progress chart, so users can see their workout progress in a fun and interactive way.
 ```
 
 ---
