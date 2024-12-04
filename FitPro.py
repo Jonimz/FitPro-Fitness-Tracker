@@ -18,11 +18,11 @@
 ####################################################################################
 
 import tkinter as tk
-from tkinter import  messagebox
+from tkinter import messagebox
 import turtle
 
 class User:
-    """A class for the user information for Fitpro.
+    """A class for the user information for FitPro.
     """
     def __init__(self, name, age, height):
         self.name= name
@@ -100,12 +100,12 @@ class FitPro:
             if not name:
                 raise ValueError("Invalid Input ", "Please add a name.")
 
-            self.user = User(name, age, height)
-            messagebox.showinfo("User name saved")
-        except ValueError:
-            messagebox.showerror("Invalid input")
+            self.user = User(name, age, height) #creates an instance of the user class using name, age and height as input
+            messagebox.showinfo("Success",f"User name saved: {self.user}") #displays a  message when the user enters the right info
+        except ValueError as e:
+            messagebox.showerror("Error",f"Invalid input: {e}") #displays an error message when the user enters the wrong info
 
-        #this clears the input fields
+        #This clears the input fields
         self.name_entry.delete(0, tk.END)
         self.age_entry.delete(0, tk.END)
         self.height_entry.delete(0, tk.END)
@@ -137,7 +137,7 @@ class FitPro:
         Log the workout for the user
         """
         if not self.user:
-            messagebox.showwarning("User info not entered","Please save user information first")
+            messagebox.showwarning("No User","Please save user information first")
             return
 
         try:
@@ -148,7 +148,7 @@ class FitPro:
             if not workout_type:
                 raise ValueError("Please enter the workout type")
             if duration <= 0 or calories <= 0:
-                raise ValueError ("Enter a positive number")
+                raise ValueError("Enter a positive number")
 
             #Create and log the workouts
             workout = Workout(workout_type, duration, calories)
@@ -159,9 +159,9 @@ class FitPro:
             self.duration_entry.delete(0, tk.END)
             self.calories_entry.delete(0, tk.END)
 
-            messagebox.showinfo("workout logged successfully")
+            messagebox.showinfo(" Success", f"workout logged successfully: {workout_type}")
         except ValueError as e:
-            messagebox.showerror("Error", "Invalid input")
+            messagebox.showerror("Error", "Invalid input: {e}")
 
 
     def view_progress(self):
