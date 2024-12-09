@@ -18,8 +18,9 @@
 ####################################################################################
 
 import tkinter as tk
+import tkinter as ttk
 from tkinter import messagebox
-import turtle
+
 
 class User:
     """A class for the user information for FitPro.
@@ -86,6 +87,7 @@ class FitPro:
         self.height_entry = tk.Entry(user_frame)
         self.height_entry.grid(row=2, column=1, padx=5, pady=5)
 
+
         tk.Button(user_frame, text = "Save User", command=self.save_user).grid(row= 3, columnspan= 2, pady=10)
 
     def save_user(self):
@@ -121,7 +123,7 @@ class FitPro:
         self.workout_type_entry = tk.Entry(workout_frame)
         self.workout_type_entry.grid(row=0, column=1, padx=5, pady=5)
 
-        tk.Label(workout_frame, text="Duration (minutes):").grid(row=1, column=0, padx=5, pady=5)
+        tk.Label(workout_frame, text="Duration (minutes):").grid(row=1, column=0, padx=10, pady=5)
         self.duration_entry = tk.Entry(workout_frame)
         self.duration_entry.grid(row=1, column=1, padx=5, pady=5)
 
@@ -182,8 +184,11 @@ class FitPro:
         messagebox.showinfo("Workout Progress", progress_message)
 
 
+
+
 if __name__ == "__main__":
     root = tk.Tk()
+    root.configure(bg= 'brown')
     app = FitPro(root)
     root.mainloop()
 
