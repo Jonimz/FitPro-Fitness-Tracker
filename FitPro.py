@@ -20,9 +20,10 @@
 import tkinter as tk
 from tkinter import messagebox
 
+
 import tkinter as tk
 from tkinter import messagebox
-
+import tkinter.ttk as ttk
 
 class User:
     """A class for the user information for FitPro."""
@@ -34,31 +35,20 @@ class User:
         self.workouts = []
 
     def log_workout(self, workout):
-        """
-        Adds a workout to the user's workout list.
-        :param workout: A Workout object
-        """
+        """Adds a workout to the user's workout list."""
         self.workouts.append(workout)
 
     def __str__(self):
-        """Returns a string representation of the user."""
+        """Returns a string representation of the user's name, age, height."""
         return f"User(name={self.name}, age={self.age}, height={self.height})"
-
 
 class Workout:
     """A class for individual workout sessions."""
 
     def __init__(self, workout_type, duration, calories):
-        """
-        Initializes a workout instance.
-        :param workout_type: Type of the workout
-        :param duration: Duration in minutes
-        :param calories: Calories burned
-        """
         self.workout_type = workout_type
         self.duration = duration
         self.calories = calories
-
 
 class FitPro:
     """A class for the FitPro application."""
@@ -107,17 +97,21 @@ class FitPro:
 
             if not name:
                 raise ValueError("Please enter a name.")
+            if age < 1 or age > 120:
+                raise ValueError("Please enter a valid age between 1 and 120.")
+            if height < 30 or height > 300:
+                raise ValueError("Please enter a valid height between 30 cm and 300 cm.")
 
             self.user = User(name, age, height)
             messagebox.showinfo("Success", f"User saved: {self.user}")
 
+            # Clear input fields after successful login
+            self.name_entry.delete(0, tk.END)
+            self.age_entry.delete(0, tk.END)
+            self.height_entry.delete(0, tk.END)
+
         except ValueError as e:
             messagebox.showerror("Error", f"Invalid input: {e}")
-
-        # Clear input fields
-        self.name_entry.delete(0, tk.END)
-        self.age_entry.delete(0, tk.END)
-        self.height_entry.delete(0, tk.END)
 
     def create_workout_frame(self):
         """Creates the workout logging and progress frame."""
@@ -178,14 +172,13 @@ class FitPro:
         total_calories = sum(w.calories for w in self.user.workouts)
 
         progress_message = (
-            f"Name:{self.user.name}\n"
+            f"Name: {self.user.name}\n"
             f"Total Workouts: {total_workouts}\n"
             f"Total Duration: {total_duration} minutes\n"
             f"Total Calories Burned: {total_calories} kcal"
         )
 
         messagebox.showinfo("Workout Progress", progress_message)
-
 
 if __name__ == "__main__":
     root = tk.Tk()
