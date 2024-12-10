@@ -18,7 +18,6 @@
 ####################################################################################
 
 import tkinter as tk
-import tkinter as ttk
 from tkinter import messagebox
 
 
@@ -59,11 +58,10 @@ class Workout:
 class FitPro:
     """" A class for the FitPro application
      """
-    def __init__(self, root):
-        self.root= root
-        self.root.title("FitPro Workout Tracker")
-
-        self.user=None
+    def __init__(self, window):
+        self.window = window
+        self.window.title("FitPro Workout Tracker")
+        self.user = None
 
         self.create_user_frame()
         self.create_workout_frame()
@@ -72,7 +70,7 @@ class FitPro:
         """"
         creates the user information frame """
 
-        user_frame = tk.Frame(self.root)
+        user_frame = tk.Frame(self.window)
         user_frame.pack(pady = 10)
 
         tk.Label(user_frame, text = "Name:").grid(row =0, column = 0, padx= 5, pady= 5)
@@ -88,9 +86,9 @@ class FitPro:
         self.height_entry.grid(row=2, column=1, padx=5, pady=5)
 
 
-        tk.Button(user_frame, text = "Save User", command=self.save_user).grid(row= 3, columnspan= 2, pady=10)
+        tk.Button(user_frame, text = "Login", command=self.log_in).grid(row= 3, columnspan= 2, pady=10)
 
-    def save_user(self):
+    def log_in(self):
         """"
         This function saves the user information """
 
@@ -114,12 +112,12 @@ class FitPro:
 
     def create_workout_frame(self):
         """
-        creates the workout logging and progress fame
+        Creates the workout logging and progress frame
         """
-        workout_frame = tk.Frame(self.root)
+        workout_frame = tk.Frame(self.window)  # Use self.window here
         workout_frame.pack(pady=10)
 
-        tk.Label(workout_frame, text = "Workout Type:").grid(row = 0, column = 0, padx= 5, pady = 5 )
+        tk.Label(workout_frame, text="Workout Type:").grid(row=0, column=0, padx=5, pady=5)
         self.workout_type_entry = tk.Entry(workout_frame)
         self.workout_type_entry.grid(row=0, column=1, padx=5, pady=5)
 
@@ -128,11 +126,11 @@ class FitPro:
         self.duration_entry.grid(row=1, column=1, padx=5, pady=5)
 
         tk.Label(workout_frame, text="Calories Burned:").grid(row=2, column=0, padx=5, pady=5)
-        self.calories_entry= tk.Entry(workout_frame)
+        self.calories_entry = tk.Entry(workout_frame)
         self.calories_entry.grid(row=2, column=1, padx=5, pady=5)
 
         tk.Button(workout_frame, text="Log Workout", command=self.log_workout).grid(row=3, columnspan=2, pady=10)
-        tk.Button(self.root, text= "View Progress", command=self.view_progress).pack(pady=5)
+        tk.Button(self.window, text="View Progress", command=self.view_progress).pack(pady=5)  # Fixed here
 
     def log_workout(self):
         """"
@@ -188,7 +186,7 @@ class FitPro:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    root.configure(bg= 'brown')
+    root.configure(bg= 'light gray')
     app = FitPro(root)
     root.mainloop()
 
