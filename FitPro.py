@@ -178,6 +178,7 @@ class FitPro:
         total_calories = sum(w.calories for w in self.user.workouts)
 
         progress_message = (
+            f"Name:{self.user.name}\n"
             f"Total Workouts: {total_workouts}\n"
             f"Total Duration: {total_duration} minutes\n"
             f"Total Calories Burned: {total_calories} kcal"
