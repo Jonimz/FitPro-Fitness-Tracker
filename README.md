@@ -1,8 +1,8 @@
-# ❗CSC226 Final Project
+#CSC226 Final Project
 
 ## Instructions
 
-❗️Exclamation Marks ❗️indicate action items; you should remove these emoji as you complete/update the items which 
+Exclamation Marks indicate action items; you should remove these emoji as you complete/update the items which 
   they accompany. (This means that your final README should have no ❗️in it!)
 
 ️**Author(s)**: Joyce Nimely
@@ -18,8 +18,8 @@ helped you, AI tools you've used, and any other resources that are not solely yo
 
 
 
-Refernces: Cemah Turboh for helping me with this project
-         Textbooks Used : How to Think like a Computer Scientist: Interactive Edition
+Refernces: Cemah Torboh for helping me with this project
+Textbooks Used : How to Think like a Computer Scientist: Interactive Edition
          
 
 ---
@@ -69,19 +69,17 @@ What has surprised you so far? Describe your general feelings. Be honest with yo
 ```
 
 ---
-
 ## Milestone 3: Virtual Check-In
 
 Indicate what percentage of the project you have left to complete and how confident you feel. 
 
-❗️**Completion Percentage**: `71- 100%`
+**Completion Percentage**: `71- 100%`
 
-❗️**Confidence**: Describe how confident you feel about completing this project, and why. Then, describe some 
+**Confidence**: Describe how confident you feel about completing this project, and why. Then, describe some 
   strategies you can employ to increase the likelihood that you'll be successful in completing this project 
   before the deadline.
 
-```
-    ** I feel moderately confident about completing the project. Most of the  functionality, such as the User and Workout classes and the ability to save and log user details, has been implemented
+```  ** I feel moderately confident about completing the project. Most of the  functionality, such as the User and Workout classes and the ability to save and log user details, has been implemented
     I'm trying to make the app look better by adjusting the colors, fonts, and padding to make it more visually appealing. I'm also working on using the turtle library to create a progress chart, so users can see their workout progress in a fun and interactive way.
 ```
 
@@ -89,12 +87,27 @@ Indicate what percentage of the project you have left to complete and how confid
 
 ## Milestone 4: Final Code, Presentation, Demo
 
-### ❗User Instructions
+###User Instructions
 In a paragraph, explain how to use your program. Assume the user is starting just after they hit the "Run" button 
 in PyCharm. 
 
+After hitting the "Run" button in PyCharm, the FitPro application will open in a new window. Follow these steps to use the program:
 
-### ❗Reflection
+Enter User Information:
+In the "Name," "Age," and "Height (cm)" fields, input your details and click the "Login" button. This will save your profile information, which will be used to track your workouts.
+
+Log a Workout:
+In the workout section, enter the type of workout (e.g., "Running"), duration in minutes, and calories burned. Click the "Log Workout" button to save the workout to your profile.
+
+View Progress:
+Click the "View Progress" button to see a summary of your total workouts, total duration, and calories burned. A popup will display your progress so far.
+
+Repeat as Needed:
+You can continue adding workouts and viewing progress as often as you like. When done, simply close the window to exit the program.
+
+
+
+###Reflection
 In three to four well-written paragraphs, address the following (at a minimum):
 - Why did you select the project that you did?
 - How closely did your final project reflect your initial design?
@@ -102,3 +115,14 @@ In three to four well-written paragraphs, address the following (at a minimum):
 - What was the hardest part of the final project?
 - What would you do differently next time, knowing what you know now?
 - (For partners) How well did you work with your partner? What made it go well? What made it challenging?
+
+```
+I picked this project because I am passionate about fitness and thought it would be fun to combine it with technology. 
+I wanted to build something simple but useful that helps people track their workouts and see their progress. 
+Plus, it was a great way to practice what I’ve learned about coding and designing apps. The final project is pretty close to what I had in mind when I started.  
+I also added things like error messages and input validation, which weren’t part of my original plan. While I couldn’t add everything I wanted, I’m proud of what I created. 
+This project taught me a lot about programming, especially about connecting the user interface with the app's logic.
+ I also learned how important it is to test your code as you go to catch mistakes early. 
+Debugging was challenging, but it helped me get better at problem-solving and thinking through how different parts of the program interact.  If I could do it again, 
+I’d spend more time testing smaller pieces of the app earlier to avoid some of the issues I ran into later. I’d also plan better to add better features. Overall,
+I’m happy with how it turned out and what I learned along the way.```
