@@ -14,16 +14,13 @@
 # Tkinter gives you the ability to create GUI Windows containing widgets.
 # This program is a simple exploration.
 #######################################################################
-# Acknowledgements:
+# Acknowledgements: Cemah Torboh for guidance
 ####################################################################################
 
-import tkinter as tk
-from tkinter import messagebox
 
 
 import tkinter as tk
 from tkinter import messagebox
-import tkinter.ttk as ttk
 
 class User:
     """A class for the user information for FitPro."""
