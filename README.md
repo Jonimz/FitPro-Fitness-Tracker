@@ -126,3 +126,17 @@ This project taught me a lot about programming, especially about connecting the 
 Debugging was challenging, but it helped me get better at problem-solving and thinking through how different parts of the program interact.  If I could do it again, 
 I’d spend more time testing smaller pieces of the app earlier to avoid some of the issues I ran into later. I’d also plan better to add better features. Overall,
 I’m happy with how it turned out and what I learned along the way.```
+
+
+Issue Queue for FitPro
+Known Bugs: 
+The app may crash or show errors if non-integer values or empty inputs are entered for age, height, duration, or calories.
+In smaller window sizes, some UI elements may overlap or become difficult to use.
+
+What’s Missing
+Save user and workout data so it doesn’t get lost when the app closes.
+Allow multiple users to log in and track their workouts separately.
+Add options to edit or delete workouts.
+Show progress using charts or graphs.
+Let users set and track fitness goals.
+
