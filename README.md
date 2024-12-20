@@ -1,5 +1,5 @@
 # Overview
-FitPro is a simple, Python-based fitness tracker that allows users to log their workouts, monitor calories burned, and track fitness progress. Designed with an intuitive graphical user interface (GUI) using tkinter, the application is ideal for those starting their fitness journey or exploring the basics of software development. FitPro focuses on usability and serves as a foundation for future enhancements such as data persistence, progress visualization, and advanced analytics.
+FitPro is a simple, Python-based fitness tracker that allows users to log their workouts, monitor calories burned, and track fitness progress. Designed with an intuitive graphical user interface (GUI) using tkinter.
 
 # How to Use FitPro
 Step 1: Download and Set Up
