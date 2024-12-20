@@ -3,7 +3,6 @@
 # Username: Nimely_J
 #
 # FinalProject: FitPro App
-#
 # Purpose: A python based fitness tracking application that allows user to log workouts,
 # set fitness goal, and track progress
 #This project uses the Tkinter module to build a user-friendly graphical
@@ -13,11 +12,7 @@
 # GUI widgets also exist to make drop-down menus and scroll bars, display images, etc...
 # Tkinter gives you the ability to create GUI Windows containing widgets.
 # This program is a simple exploration.
-#######################################################################
-# Acknowledgements: Cemah Torboh for guidance
-####################################################################################
-
-
+##########################################################################
 
 import tkinter as tk
 from tkinter import messagebox
